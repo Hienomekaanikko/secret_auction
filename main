@@ -1,0 +1,28 @@
+from replit import clear
+from art import logo
+print(logo)
+bidding_on = True
+
+while bidding_on == True:
+  
+  bids = []
+  name = input("What is your name? ")
+  clear()
+  bid = input("What is your bid? ")
+  clear()
+
+  def bidder_data(name, bid):
+    new_bidder = {}
+    new_bidder["name"] = name
+    new_bidder["bid"] = bid
+    bids.append(new_bidder)
+    status = input("Are there more people to bid? Y or N: ")
+    if status == "Y":
+      bidding_on == True
+    else:
+      bidding_on == False
+      highest_bid = max(bids)
+      print(f"The highest bidder and winner is {highest_bid}!")
+  bidder_data(name=name, bid=bid)
+
+    
